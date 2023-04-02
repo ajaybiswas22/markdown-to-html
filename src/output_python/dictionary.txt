@@ -1,0 +1,173 @@
+# Python Dictionaries
+
+<h2>Introduction</h2>
+
+Dictionary is a highly versatile built-in datatype provided by Python. It is used to stored data in a key-value fashion. Dictionaries are created by storing key-value pairs inside braces {}. Dictionaries used to be unordered till Python 3.6, however, from Python 3.7, they are ordered. We will be considering dictionaries as unordered as this new feature needs to be more explored.
+
+<h3>Dictionary Example</h3>
+
+<pre class="prettyprint linenums lang-python"><code>
+student = {"name": "Sam", "age": 18, "hobbies": ["basketball", "football"]}
+print(student)
+</pre></code>
+
+<pre><code>
+{'name': 'Sam', 'age': 18, 'hobbies': ['basketball', 'football']}
+</pre></code>
+
+Unlike lists, dictionaries are indexed by keys. Consider dictionaries similar to array, where you can access any location of the array in O(1) time complexity. This is because dictionaries use hash table to store values. The only key difference between array and dictionary is, elements of arrays can be retrieved by providing index location, whereas, values in dictionary are accessed using the key. Since the values are accessed using keys, the keys must be unique.
+
+<pre class="prettyprint linenums lang-python"><code>
+print(student["age"])
+</pre></code>
+
+<pre><code>
+18
+</pre></code>
+
+Dictionary keys are immutable, i.e., they must be hashable. Mostly numbers and strings are used as a key, however you can use a tuple. Only thing you have to remember while using a tuple as key, is that you can only have string, number or another tuple inside it.
+
+<pre class="prettyprint linenums lang-python"><code>
+food = {["apple"]: "tasty"}
+</pre></code>
+
+<pre><code>
+TypeError: unhashable type: 'list'
+</pre></code>
+
+<pre class="prettyprint linenums lang-python"><code>
+food = {(1,2): "mango"}
+food[(1,2)]
+</pre></code>
+
+<pre><code>
+'mango'
+</pre></code>
+
+<h2>Dictionary Methods</h2>
+
+<h3>get()</h3>
+
+Returns value for key if key is in the dictionary, else default.
+
+<pre class="prettyprint linenums lang-python"><code>
+student.get('name')
+</pre></code>
+
+<pre><code>
+'Sam'
+</pre></code>
+
+<h3>items()</h3>
+
+Set like object to see contents of the dictionary.
+
+<pre class="prettyprint linenums lang-python"><code>
+student.items()
+</pre></code>
+<pre><code>
+dict_items([('name', 'Sam'), ('age', 18), ('hobbies', ['basketball', 'football'])])
+</pre></code>
+
+<pre class="prettyprint linenums lang-python"><code>
+for item in student.items():
+print(item)
+</pre></code>
+
+<pre><code>
+('name', 'Sam')
+('age', 18)
+('hobbies', ['basketball', 'football'])
+</pre></code>
+
+<h3>clear()</h3>
+
+Clears contents of the dictionary
+
+<pre class="prettyprint linenums lang-python"><code>
+food.clear()
+print(food)
+</pre></code>
+
+<pre><code>
+{}
+</pre></code>
+
+<h3>pop()</h3>
+
+Removes specified key and returns the corresponding value. If key is not found, default is returned if given, otherwise KeyError is raised.
+
+<pre class="prettyprint linenums lang-python"><code>
+hobbies = student.pop("hobbies")
+print("hobbies: ",hobbies)
+print("student: ", student)
+</pre></code>
+
+<pre><code>
+hobbies:  ['basketball', 'football']
+student:  {'name': 'Sam', 'age': 18}
+</pre></code>
+<h3>update()</h3>
+
+Updates value for the given key. If key is not present, then a new key-value pair is created.
+
+<pre class="prettyprint linenums lang-python"><code>
+student.update({"name":"bob"})
+print(student)
+</pre></code>
+
+<pre><code>
+{'name': 'bob', 'age': 18}
+</pre></code>
+
+<pre class="prettyprint linenums lang-python"><code>
+student.update({"height":171.0})
+print(student)
+</pre></code>
+
+<pre><code>
+{'name': 'bob', 'age': 18, 'height': 171.0}
+</pre></code>
+
+<h3>fromkeys()</h3>
+
+Creates a dictionary from the given sequence of keys and values.
+
+<pre class="prettyprint linenums lang-python"><code>
+# keys
+candidate = {'sam', 'bob', 'sara'}
+# values
+votes = 0
+
+election = dict.fromkeys(candidate, votes)
+print(election)
+</pre></code>
+
+<pre><code>
+{'bob': 0, 'sam': 0, 'sara': 0}
+</pre></code>
+
+<h3>values()</h3>
+
+As the name specifies, values() will return all the values of the dictionary.
+
+<pre class="prettyprint linenums lang-python"><code>
+student.values()
+</pre></code>
+
+<pre><code>
+dict_values(['bob', 18, 171.0])
+</pre></code>
+
+<h3>copy()</h3>
+
+Creates a shallow copy of a dictionary
+
+<pre class="prettyprint linenums lang-python"><code>
+people = student.copy()
+print(people)
+</pre></code>
+
+<pre><code>
+{'name': 'bob', 'age': 18, 'height': 171.0}
+</pre></code>

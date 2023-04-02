@@ -1,0 +1,51 @@
+# Python is a nice and easy language
+
+## Smaller
+
+
+```c
+#include<stdio.h>
+
+```
+### Steps
+
+* Step 1:
+
+1. Hello
+2. Bye
+
+```html
+https://www.tutorialspoint.com/online_html_editor.php
+http://letsmastercs.com/guide/index.php
+
+<table class="table table-striped table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Matt</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Jacob</td>
+     <td>Thornton</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>Larry</td>
+      <td>the Bird</td>
+    </tr>
+  </tbody>
+</table>
+```
+
+```html
+<img src="media/mg_road.jpg" style="max-width: 100%; height: auto;" alt="mg-road">
+```
+

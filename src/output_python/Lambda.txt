@@ -1,0 +1,38 @@
+# Python Lambda
+
+<h2>Introduction</h2>
+
+Lambda function is a really useful feature provided by python. A lambda function is an anonymous function, i.e., without any name. It can take any number of arguments but can have only one expression. Let's see an example below.
+
+<h3>Syntax</h3>
+
+<pre><code>
+lambda arguments : expression
+</pre></code>
+
+<pre class="prettyprint linenums lang-python"><code>
+r = 10
+circle = lambda r : 3.14 * r * r
+print(circle(5))
+</pre></code>
+
+<h3>Output</h3>
+
+<pre><code>
+314
+</pre></code>
+
+Now let's see an example with multiple arguments
+
+<pre class="prettyprint linenums lang-python"><code>
+a = 10
+b = 12
+rectangle = lambda a,b : a*b
+print(rectangle)
+</pre></code>
+
+<h3>Output</h3>
+
+<pre><code>
+120
+</pre></code>

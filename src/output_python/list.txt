@@ -1,0 +1,235 @@
+# Python List
+
+<h2>Introduction</h2>
+
+Python provides a wonderful datatype called list. A list can store collection of objects inside it, whether it is a string, boolean, int, or even custom objects. List are denoted by square brackets []. Some of the properties of list are given below.
+
+<ol>
+<li> Lists are mutable, i.e., they can be modified.
+</li>
+<li> Lists are dynamic, i.e., they can expand or contract in size
+</li>
+<li> Lists are ordered
+</li>
+<li> Lists can be accessed via index.
+</li>
+<li> Lists are iterable
+</li>
+</ol>
+
+Now let us see how can you use lists in your code
+
+<h3>Create a list called fruits</h3>
+
+<pre class="prettyprint linenums lang-python"><code>
+fruits = ['Apple','Mango','Pineapple','Orange','Jackfruit']
+print(fruits)
+</pre></code>
+
+<pre><code>
+['Apple', 'Mango', 'Pineapple', 'Orange', 'Jackfruit']
+</pre></code>
+<h3>Access first element of a list</h3>
+
+<pre class="prettyprint linenums lang-python"><code>
+print(fruits[0])
+</pre></code>
+
+<pre><code>
+Apple
+</pre></code>
+
+<h3>Access last element of a list</h3>
+
+<pre class="prettyprint linenums lang-python"><code>
+print(fruits[-1])
+</pre></code>
+
+<pre><code>
+Jackfruit
+</pre></code>
+
+<h3>Traverse List using range()</h3>
+
+<pre class="prettyprint linenums lang-python"><code>
+for i in range(len(fruits)):
+print(fruits[i], end=" ")
+</pre></code>
+
+<pre><code>
+Apple Mango Pineapple Orange Jackfruit
+</pre></code>
+
+<h3>Traverse list element wise</h3>
+
+<pre class="prettyprint linenums lang-python"><code>
+for fruit in fruits:
+print(fruit, end=" ")
+</pre></code>
+<pre><code>
+Apple Mango Pineapple Orange Jackfruit
+</pre></code>
+
+<h3>Copying List</h3>
+
+You will be thinking, copying list will be an easy job, but you are wrong. List cannot be copied using assignment operator. When we use assignment operator, we are actually referencing to the list instead of copying it. Following example shows this problem.
+
+<pre class="prettyprint linenums lang-python"><code>
+A = [10,20,30,40]
+B = A
+B[0] = 50
+
+print('B = ',B)
+print('A = ',A)
+</pre></code>
+<pre><code>
+B =  [50, 20, 30, 40]
+A =  [50, 20, 30, 40]
+</pre></code>
+Let's see id's of both the variables
+
+<pre class="prettyprint linenums lang-python"><code>
+print('A id = ',id(A))
+print('B id = ',id(B))
+</pre></code>
+<pre><code>
+A id =  2003427957504
+B id =  2003427957504
+</pre></code>
+
+You can see that both of them have same ids. Now let's see how to copy a list.
+
+<pre class="prettyprint linenums lang-python"><code>
+import copy
+A = [10,20,30,40]
+B = copy.deepcopy(A)
+A = [10,20,30,40]
+B[0] = 50
+
+print('A = ', A)
+print('B = ',B)
+
+print('A id = ',id(A))
+print('B id = ',id(B))
+</pre></code>
+<pre><code>
+A =  [10, 20, 30, 40]
+B =  [50, 20, 30, 40]
+A id =  2003439916736
+B id =  2003439917952
+</pre></code>
+
+So let's understand what we did. We used copy library to perform deepcopy. Here, element wise copying happens, which results in creation of a new list. You can perform the same thing using a for loop.
+
+<h2>List Methods</h2>
+
+<h3>index</h3>
+
+Returns index of first occurance of the element in the list. Raises ValueError if the element is not present.
+
+<pre class="prettyprint linenums lang-python"><code>
+print(fruits.index('Mango'))
+</pre></code>
+<pre><code>
+1
+</pre></code>
+
+<h3>remove</h3>
+
+Removes first occurance of the element in the list. Raises ValueError if the element is not present.
+
+<pre class="prettyprint linenums lang-python"><code>
+fruits.remove('Mango')
+print(fruits)
+</pre></code>
+
+<pre><code>
+['Apple', 'Pineapple', 'Orange', 'Jackfruit']
+</pre></code>
+
+<h3>append</h3>
+The append method is used to add an element to the end of the list.
+
+<pre class="prettyprint linenums lang-python"><code>
+A.append(5)
+print(A)
+</pre></code>
+
+<pre><code>
+[10, 20, 30, 40, 5]
+</pre></code>
+
+<h3>insert</h3>
+
+The insert method is used to add an element at the desired position.
+
+<pre class="prettyprint linenums lang-python"><code>
+# insert 99 at position 0
+A.insert(0,99)
+print(A)
+</pre></code>
+<pre><code>
+[99, 10, 20, 30, 40, 5]
+</pre></code>
+
+<h3>sort</h3>
+
+sorts a list in ascending order. The sorting is performed in-place. To sort a list in descending order, you will have to provide argument "reverse=True".
+
+<pre class="prettyprint linenums lang-python"><code>
+# ascending order
+A.sort()
+print(A)
+</pre></code>
+<pre><code>
+[5, 10, 20, 30, 40, 99]
+</pre></code>
+
+<pre class="prettyprint linenums lang-python"><code>
+# descending order
+A.sort(reverse=True)
+print(A)
+</pre></code>
+<pre><code>
+[99, 40, 30, 20, 10, 5]
+</pre></code>
+
+<h3>reverse</h3>
+
+The reverse method flips the list horizontally. This is also in-place.
+
+<pre class="prettyprint linenums lang-python"><code>
+A = [9,8,10,-1]
+A.reverse()
+print(A)
+</pre></code>
+
+<pre><code>
+[-1, 10, 8, 9]
+</pre></code>
+
+<h3>extend</h3>
+
+Lists can be merged together to form a bigger list. This is done using the extend method.
+
+<pre class="prettyprint linenums lang-python"><code>
+A.extend(B)
+print(A)
+</pre></code>
+
+<pre><code>
+[-1, 10, 8, 9, 50, 20, 30, 40]
+</pre></code>
+
+You can also merge two listst using the '+' operator.
+
+<pre class="prettyprint linenums lang-python"><code>
+M = [2,3,4]
+N = [6,7,8]
+m = 0
+print('M+N = ',M+N)
+</pre></code>
+
+<pre><code>
+M+N =  [2, 3, 4, 6, 7, 8]
+</pre></code>
