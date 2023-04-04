@@ -29,6 +29,7 @@ print(fruits)
 <pre><code>
 ['Apple', 'Mango', 'Pineapple', 'Orange', 'Jackfruit']
 </pre></code>
+
 <h3>Access first element of a list</h3>
 
 <pre class="prettyprint linenums lang-python"><code>
@@ -66,6 +67,7 @@ Apple Mango Pineapple Orange Jackfruit
 for fruit in fruits:
 print(fruit, end=" ")
 </pre></code>
+
 <pre><code>
 Apple Mango Pineapple Orange Jackfruit
 </pre></code>
@@ -82,16 +84,19 @@ B[0] = 50
 print('B = ',B)
 print('A = ',A)
 </pre></code>
+
 <pre><code>
 B =  [50, 20, 30, 40]
 A =  [50, 20, 30, 40]
 </pre></code>
+
 Let's see id's of both the variables
 
 <pre class="prettyprint linenums lang-python"><code>
 print('A id = ',id(A))
 print('B id = ',id(B))
 </pre></code>
+
 <pre><code>
 A id =  2003427957504
 B id =  2003427957504
@@ -112,6 +117,7 @@ print('B = ',B)
 print('A id = ',id(A))
 print('B id = ',id(B))
 </pre></code>
+
 <pre><code>
 A =  [10, 20, 30, 40]
 B =  [50, 20, 30, 40]
@@ -130,6 +136,7 @@ Returns index of first occurance of the element in the list. Raises ValueError i
 <pre class="prettyprint linenums lang-python"><code>
 print(fruits.index('Mango'))
 </pre></code>
+
 <pre><code>
 1
 </pre></code>
@@ -148,6 +155,7 @@ print(fruits)
 </pre></code>
 
 <h3>append</h3>
+
 The append method is used to add an element to the end of the list.
 
 <pre class="prettyprint linenums lang-python"><code>
@@ -168,6 +176,7 @@ The insert method is used to add an element at the desired position.
 A.insert(0,99)
 print(A)
 </pre></code>
+
 <pre><code>
 [99, 10, 20, 30, 40, 5]
 </pre></code>
@@ -181,6 +190,7 @@ sorts a list in ascending order. The sorting is performed in-place. To sort a li
 A.sort()
 print(A)
 </pre></code>
+
 <pre><code>
 [5, 10, 20, 30, 40, 99]
 </pre></code>
@@ -190,6 +200,7 @@ print(A)
 A.sort(reverse=True)
 print(A)
 </pre></code>
+
 <pre><code>
 [99, 40, 30, 20, 10, 5]
 </pre></code>
